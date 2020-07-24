@@ -36,15 +36,14 @@ Just add a YAML file within your project. The Plugin offer two option. One to lo
 
 ### Simple YAML
 
-`
+```
 # src/asset/sample.yaml
 
 sampleKey: SampleValue
-`
+```
 
 Now just import them:
-
-`
+```
 //src/main.js
 
 # Simple Import
@@ -61,27 +60,26 @@ console.log(myYamlObj); //{ "sampleKey": "sampleValue"}
 import { sampleKey } from './asset/sample.yaml';
 
 console.log(sampleKey); //"sampleValue"
-
-`
+```
 
 ### Multiple YAML documents
 
 A single YAML file can include MULTIPLE YAML document. This are usually defined by start of document separator "---". To use this feature you need to add a "stream" parameters, within the YAML import:
 
 
-`
+```
 # src/asset/multiDocument.yaml
 
 ---
 title: Document one
 ---
 title: Document two
-`
+```
 
 Now just import them using the stream flag:
-`
+```
 # Multi Document import
 import multiDocumentYaml from './asset/multiDocument.yaml?stream';
 
 console.log(multiDocumentYaml); //[{ "title": "Document one"}, { "title": "Document Two"}]
-`
+```
